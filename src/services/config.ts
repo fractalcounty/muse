@@ -22,6 +22,7 @@ const CONFIG_MAP = {
   BOT_ACTIVITY_TYPE: process.env.BOT_ACTIVITY_TYPE ?? 'LISTENING',
   BOT_ACTIVITY_URL: process.env.BOT_ACTIVITY_URL ?? '',
   BOT_ACTIVITY: process.env.BOT_ACTIVITY ?? 'music',
+  BOT_ACTIVITY_STATE: process.env.BOT_ACTIVITY_STATE ?? '',
   ENABLE_SPONSORBLOCK: process.env.ENABLE_SPONSORBLOCK === 'true',
   SPONSORBLOCK_TIMEOUT: process.env.ENABLE_SPONSORBLOCK ?? 5,
 } as const;
@@ -48,6 +49,7 @@ export default class Config {
   readonly BOT_ACTIVITY_TYPE!: ActivityType;
   readonly BOT_ACTIVITY_URL!: string;
   readonly BOT_ACTIVITY!: string;
+  readonly BOT_ACTIVITY_STATE!: string;
   readonly ENABLE_SPONSORBLOCK!: boolean;
   readonly SPONSORBLOCK_TIMEOUT!: number;
 

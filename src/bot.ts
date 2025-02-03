@@ -1,4 +1,4 @@
-import {Client, Collection, User} from 'discord.js';
+import {Client, Collection, User, ActivityType} from 'discord.js';
 import {inject, injectable} from 'inversify';
 import ora from 'ora';
 import {TYPES} from './types.js';
@@ -150,6 +150,8 @@ export default class {
             name: this.config.BOT_ACTIVITY,
             type: this.config.BOT_ACTIVITY_TYPE,
             url: this.config.BOT_ACTIVITY_URL === '' ? undefined : this.config.BOT_ACTIVITY_URL,
+            state: this.config.BOT_ACTIVITY_TYPE === ActivityType.Custom ? 
+              this.config.BOT_ACTIVITY : undefined,
           },
         ],
         status: this.config.BOT_STATUS,
