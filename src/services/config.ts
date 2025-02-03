@@ -31,6 +31,7 @@ const BOT_ACTIVITY_TYPE_MAP = {
   LISTENING: ActivityType.Listening,
   WATCHING: ActivityType.Watching,
   STREAMING: ActivityType.Streaming,
+  CUSTOM: ActivityType.Custom,
 } as const;
 
 @injectable()
@@ -44,7 +45,7 @@ export default class Config {
   readonly CACHE_DIR!: string;
   readonly CACHE_LIMIT_IN_BYTES!: number;
   readonly BOT_STATUS!: PresenceStatusData;
-  readonly BOT_ACTIVITY_TYPE!: Exclude<ActivityType, ActivityType.Custom>;
+  readonly BOT_ACTIVITY_TYPE!: ActivityType;
   readonly BOT_ACTIVITY_URL!: string;
   readonly BOT_ACTIVITY!: string;
   readonly ENABLE_SPONSORBLOCK!: boolean;
